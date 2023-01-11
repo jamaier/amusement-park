@@ -24,7 +24,9 @@ window.onload = function() {
     const age = parseInt(document.querySelector("input#age").value);
     const height = parseInt(document.querySelector("input#height").value);
    
-  if (age && height) {
+  if (!age || !height) {
+    document.getElementById("error-message").removeAttribute("class");
+    } else {
     if (age >= 12 && height >= 60) {
       document.getElementById("swings").removeAttribute("class");
       document.getElementById("coaster").removeAttribute("class");
@@ -40,8 +42,7 @@ window.onload = function() {
       else {
         document.getElementById("sorry").removeAttribute("class");
       }
-  } else {
-    document.getElementById("error-message").removeAttribute("class");
     }
-    };
   };
+};
+
